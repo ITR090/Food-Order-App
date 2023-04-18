@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Header } from './components/header/Header'
+import { Meals } from './components/Meals'
+import {MealsSummary} from './components/SummaryMeals'
+import {CartContextProvider} from './components/myContext/Cart-Context'
+// import {AvailableMeals} from '../src/AvailableMeals'
 function App() {
+
+  //const [meals]= useState(DUMMY_MEALS) 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CartContextProvider>
+        <Header />
+        <main>
+        <MealsSummary/>
+        </main>
+        <Meals />
+      </CartContextProvider>
+    </>
   );
 }
 
